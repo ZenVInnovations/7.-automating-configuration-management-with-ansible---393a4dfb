@@ -29,7 +29,7 @@ Automate and standardize your infrastructure setup using Ansible. This repo prov
 
 ## Prerequisites
 
-- **Control Node**: Linux/macOS with Ansible ≥ 2.9  
+- **Control Node**: Linux/macOS with Ansible ≥ 2.9  
 - **Managed Nodes**: SSH‑accessible Linux servers with Python  
 - **Git**: For version control  
 
@@ -126,4 +126,3 @@ Branch naming conventions
 Syncing with upstream
 
 PR workflow
-
