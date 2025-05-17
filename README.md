@@ -1,5 +1,4 @@
 # Rooman_technology_project
-# Rooman_technology_project
 Automating Configuration Management with Ansible
 
 Automate and standardize your infrastructure setup using Ansible. This repository provides playbooks, roles, and inventory configurations to deploy and manage web and database servers across staging and production environments.
