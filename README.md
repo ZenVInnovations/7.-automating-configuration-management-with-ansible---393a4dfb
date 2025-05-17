@@ -1,116 +1,129 @@
-# Rooman_technology_project
-Automating Configuration Management with Ansible
+# Rooman Technology Project: Automating Configuration Management with Ansible
 
-Automate and standardize your infrastructure setup using Ansible. This repository provides playbooks, roles, and inventory configurations to deploy and manage web and database servers across staging and production environments.
+Automate and standardize your infrastructure setup using Ansible. This repo provides playbooks, roles, and inventory configs to deploy and manage web and database servers in both staging and production.
 
-Table of Contents
+---
 
-Features
+## Table of Contents
 
-Prerequisites
+- [Features](#features)  
+- [Prerequisites](#prerequisites)  
+- [Installation](#installation)  
+- [Configuration](#configuration)  
+- [Usage](#usage)  
+- [Project Structure](#project-structure)  
+- [Testing](#testing)  
+- [Contributing](#contributing)  
+- [License](#license)  
 
-Installation
+---
 
-Configuration
+## Features
 
-Usage
+- **Idempotent Playbooks**: Safely rerun without side effects  
+- **Modular Roles**: Reusable Ansible roles for web & DB servers  
+- **Multi‑Environment**: Separate staging and production inventories  
+- **Centralized Variables**: Easy customization via `vars/`  
 
-Project Structure
+---
 
-Testing
+## Prerequisites
 
-Contributing
+- **Control Node**: Linux/macOS with Ansible ≥ 2.9  
+- **Managed Nodes**: SSH‑accessible Linux servers with Python  
+- **Git**: For version control  
 
-License
+---
 
-Features
+## Installation
 
-Idempotent Playbooks: Easily rerun without side effects
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/abhinavkumar2119/7.-automating-configuration-management-with-ansible---393a4dfb.git
+   cd 7.-automating-configuration-management-with-ansible---393a4dfb/Configuration-Management-Automation-with-Ansible-main
+Install Ansible (if needed)
 
-Modular Roles: Reusable Ansible roles for web and database servers
-
-Multi-Environment: Separate inventories for staging and production
-
-Variable Management: Centralized variable files for easy customization
-
-Prerequisites
-
-Control Node: Linux/macOS with Ansible installed (version >=2.9)
-
-Managed Nodes: SSH-accessible servers (Linux) with Python
-
-Git: For version control
-
-Installation
-
-Clone the repository:
-
-git clone https://github.com/abhinavkumar2119/7.-automating-configuration-management-with-ansible---393a4dfb.git
-cd 7.-automating-configuration-management-with-ansible---393a4dfb/Configuration-Management-Automation-with-Ansible-main
-
-Install Ansible (if not already installed):
-
+bash
+Copy
+Edit
 pip install ansible
-
 Configuration
+Inventory
 
-Inventory Files:
+Copy inventory/staging.sample → inventory/staging
 
-Copy inventory/staging.sample to inventory/staging
+Copy inventory/production.sample → inventory/production
 
-Copy inventory/production.sample to inventory/production
+Edit host IPs/hostnames in each file
 
-Update host IPs or hostnames accordingly
+Variables (vars/)
 
-Variable Files (in vars/):
-
-Edit webserver_vars.yml and dbserver_vars.yml to configure ports, users, and other settings
+Update webserver_vars.yml and dbserver_vars.yml
 
 Usage
+Deploy to Staging
 
-Deploy to Staging:
-
+bash
+Copy
+Edit
 ansible-playbook -i inventory/staging playbooks/site.yml
+Deploy to Production
 
-Deploy to Production:
-
+bash
+Copy
+Edit
 ansible-playbook -i inventory/production playbooks/site.yml
+Syntax Check
 
-Syntax Check:
-
+bash
+Copy
+Edit
 ansible-playbook --syntax-check playbooks/site.yml
+Dry Run
 
-Dry Run (Check Mode):
-
+bash
+Copy
+Edit
 ansible-playbook -i inventory/staging playbooks/site.yml --check
-
 Project Structure
-
+python
+Copy
+Edit
 ansible/
 ├── inventory/
-│   ├── staging.sample      # Example hosts for staging
-│   └── production.sample   # Example hosts for production
+│   ├── staging.sample      # example staging hosts
+│   └── production.sample   # example production hosts
 ├── vars/
-│   ├── webserver_vars.yml  # Variables for webserver role
-│   └── dbserver_vars.yml   # Variables for dbserver role
+│   ├── webserver_vars.yml  # web server variables
+│   └── dbserver_vars.yml   # database variables
 ├── playbooks/
-│   ├── site.yml            # Main orchestrator playbook
-│   ├── webserver.yml       # Playbook for web servers
-│   └── dbserver.yml        # Playbook for db servers
+│   ├── site.yml            # orchestrator playbook
+│   ├── webserver.yml       # webserver setup
+│   └── dbserver.yml        # db server setup
 └── roles/
-    ├── webserver/          # Web server installation & config
-    └── dbserver/           # Database server installation & config
-
+    ├── webserver/          # webserver tasks
+    └── dbserver/           # database tasks
 Testing
+Preview changes
 
-Use --diff to preview changes without applying:
-
+bash
+Copy
+Edit
 ansible-playbook -i inventory/staging playbooks/site.yml --diff
+Validate YAML
 
-Validate YAML formatting:
-
+bash
+Copy
+Edit
 yamllint playbooks/ roles/
-
 Contributing
+See CONTRIBUTING.md for:
 
-Contributions are welcome! Please read CONTRIBUTING.md for guidelines on setting up your environment, coding standards, and submitting pull requests.
+Fork & clone steps
+
+Branch naming conventions
+
+Syncing with upstream
+
+PR workflow
+
