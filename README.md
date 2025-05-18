@@ -13,8 +13,7 @@ Automate and standardize your infrastructure setup using Ansible. This repo prov
 - [Usage](#usage)  
 - [Project Structure](#project-structure)  
 - [Testing](#testing)  
-- [Contributing](#contributing)  
-- [License](#license)  
+
 
 ---
 
