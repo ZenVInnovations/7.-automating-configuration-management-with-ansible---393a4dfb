@@ -38,8 +38,6 @@ Automate and standardize your infrastructure setup using Ansible. This repo prov
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/abhinavkumar2119/7.-automating-configuration-management-with-ansible---393a4dfb.git
-   cd 7.-automating-configuration-management-with-ansible---393a4dfb/Configuration-Management-Automation-with-Ansible-main
 Install Ansible (if needed)
 
 bash
